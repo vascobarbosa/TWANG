@@ -21,14 +21,14 @@ int16_t ax, ay, az;
 int16_t gx, gy, gz;
 
 // LED setup
-#define NUM_LEDS             475
+#define NUM_LEDS             346
 #define DATA_PIN             3
-#define CLOCK_PIN            4
+#define CLOCK_PIN            8
 #define LED_COLOR_ORDER      BGR//GBR
 #define BRIGHTNESS           150
 #define DIRECTION            1     // 0 = right to left, 1 = left to right
 #define MIN_REDRAW_INTERVAL  16    // Min redraw interval (ms) 33 = 30fps / 16 = 63fps
-#define USE_GRAVITY          1     // 0/1 use gravity (LED strip going up wall)
+#define USE_GRAVITY          0     // 0/1 use gravity (LED strip going up wall)
 #define BEND_POINT           550   // 0/1000 point at which the LED strip goes up the wall
 
 // GAME
@@ -41,22 +41,22 @@ long lastInputTime = 0;
 iSin isin = iSin();
 
 // JOYSTICK
-#define JOYSTICK_ORIENTATION 1     // 0, 1 or 2 to set the angle of the joystick
+#define JOYSTICK_ORIENTATION 0     // 0, 1 or 2 to set the angle of the joystick
 #define JOYSTICK_DIRECTION   1     // 0/1 to flip joystick direction
 #define ATTACK_THRESHOLD     30000 // The threshold that triggers an attack
-#define JOYSTICK_DEADZONE    5     // Angle to ignore
+#define JOYSTICK_DEADZONE    10     // Angle to ignore
 int joystickTilt = 0;              // Stores the angle of the joystick
 int joystickWobble = 0;            // Stores the max amount of acceleration (wobble)
 
 // WOBBLE ATTACK
-#define ATTACK_WIDTH        70     // Width of the wobble attack, world is 1000 wide
+#define ATTACK_WIDTH        30     // Width of the wobble attack, world is 1000 wide
 #define ATTACK_DURATION     500    // Duration of a wobble attack (ms)
 long attackMillis = 0;             // Time the attack started
 bool attacking = 0;                // Is the attack in progress?
 #define BOSS_WIDTH          40
 
 // PLAYER
-#define MAX_PLAYER_SPEED    10     // Max move speed of the player
+#define MAX_PLAYER_SPEED    20     // Max move speed of the player
 char* stage;                       // what stage the game is at (PLAY/DEAD/WIN/GAMEOVER)
 long stageStartTime;               // Stores the time the stage changed for stages that are time based
 int playerPosition;                // Stores the player position
@@ -720,12 +720,3 @@ void SFXwin(){
 void SFXcomplete(){
     noToneAC();
 }
-
-
-
-
-
-
-
-
-
