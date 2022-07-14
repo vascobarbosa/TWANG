@@ -44,7 +44,7 @@ iSin isin = iSin();
 #define JOYSTICK_ORIENTATION 0     // 0, 1 or 2 to set the angle of the joystick
 #define JOYSTICK_DIRECTION   1     // 0/1 to flip joystick direction
 #define ATTACK_THRESHOLD     30000 // The threshold that triggers an attack
-#define JOYSTICK_DEADZONE    10     // Angle to ignore
+#define JOYSTICK_DEADZONE    5     // Angle to ignore
 int joystickTilt = 0;              // Stores the angle of the joystick
 int joystickWobble = 0;            // Stores the max amount of acceleration (wobble)
 
@@ -56,7 +56,7 @@ bool attacking = 0;                // Is the attack in progress?
 #define BOSS_WIDTH          40
 
 // PLAYER
-#define MAX_PLAYER_SPEED    20     // Max move speed of the player
+#define MAX_PLAYER_SPEED    10     // Max move speed of the player
 char* stage;                       // what stage the game is at (PLAY/DEAD/WIN/GAMEOVER)
 long stageStartTime;               // Stores the time the stage changed for stages that are time based
 int playerPosition;                // Stores the player position
